@@ -9,6 +9,10 @@ let goalies = document.getElementsByClassName("Goalie");
 for (let player of players) {
   getPlayerStats(player.id, season);
 }
+// loop through the goalies elements and retrieve stats
+for (let goalie of goalies) {
+  getPlayerStats(goalie.id, season);
+}
 
 // a function to pull data from API, based on variables declared above
 function getPlayerStats(playerId, season) {
