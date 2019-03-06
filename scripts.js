@@ -2,7 +2,7 @@
 // define which season
 var season = 20182019
 // put ID from HTML file into players variable
-let players = document.getElementsByClassName("Players");
+let players = document.getElementsByClassName("Player");
 
 // loop through the players elements and retrieve stats
 for (let player of players) {
