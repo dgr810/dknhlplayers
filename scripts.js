@@ -3,16 +3,16 @@
 var season = 20182019
 // put ID from HTML file into players or goalies variable
 let players = document.getElementsByClassName("Player");
-let goalies = document.getElementsByClassName("Goalie");
+//let goalies = document.getElementsByClassName("Goalie");
 
 // loop through the players elements and retrieve stats
 for (let player of players) {
   getPlayerStats(player.id, season);
 }
 // loop through the goalies elements and retrieve stats
-for (let goalie of goalies) {
-  getPlayerStats(goalie.id, season);
-}
+// for (let goalie of goalies) {
+//   getPlayerStats(goalie.id, season);
+// }
 
 // a function to pull data from API, based on variables declared above
 function getPlayerStats(playerId, season) {
@@ -24,8 +24,8 @@ function getPlayerStats(playerId, season) {
   request.onload = function () {
 
     // Begin accessing JSON data here
-    var data = JSON.parse(this.response);
-    
+    var data = JSON.parse(this.response); 
+
     if (request.status >= 200 && request.status < 400) {
       var noOfGoals = countGoals(data);
       drawGoals(noOfGoals,playerId);
