@@ -3,7 +3,6 @@ function getGoals(data) {
   var noOfGoals = 0;
   data.stats[0].splits.forEach(function (game) {
     noOfGoals += game.stat.goals;
-    // console.log(noOfGoals);
   });
   return noOfGoals;
 }
@@ -12,7 +11,6 @@ function getSaves(data) {
   var noOfSaves = 0;
   data.stats[0].splits.forEach(function (game) {
     noOfSaves += game.stat.saves;
-    console.log(noOfSaves);
   });
   return noOfSaves;
 }
