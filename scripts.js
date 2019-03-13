@@ -46,7 +46,7 @@ function getPlayerStats(player, season) {
         player.innerText = getGoals(data);
       }
       else {
-        player.innerText = getSaves(data);
+        player.innerText = noOfSaves;
       }
     } else {
       console.error('No Data!');
