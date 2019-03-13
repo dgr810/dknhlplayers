@@ -14,6 +14,14 @@ function getSaves(data) {
   });
   return noOfSaves;
 }
+// function call to dig out all saves from API dataset and put it into "noOfShots"
+function getShots(data) {
+  var noOfShots = 0;
+  data.stats[0].splits.forEach(function (game) {
+    noOfShots += game.stat.shots;
+  });
+  return noOfShots;
+}
 // define which season to get data from
 var season = 20182019
 
