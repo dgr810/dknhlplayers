@@ -10,7 +10,7 @@ function getGoals(data) {
 function getSaves(data) {
   var noOfSaves = 0;
   data.stats[0].splits.forEach(function (game) {
-    noOfSaves += game.stat.saves;
+    noOfSaves += game.stat.savePercentage;
   });
   return noOfSaves;
 }
@@ -49,7 +49,7 @@ function getPlayerStats(player, season) {
     if (request.status >= 200 && request.status < 400) {
       var noOfSaves = getSaves(data);
       if (Number.isNaN(noOfSaves)) {
-        player.innerText = getGoals(data);
+        player.innerText += getGoals(data) + ", " + getShots(data);
       }
       else {
         player.innerText = noOfSaves;
